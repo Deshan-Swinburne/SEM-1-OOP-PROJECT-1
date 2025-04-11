@@ -23,6 +23,7 @@ public class Book {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
+        //When the book is created for the first time,Book is available
         isAvailable = true;
 
     }
@@ -32,7 +33,7 @@ public class Book {
      *
      * @param isbn book's isbn
      */
-    public void setName(String isbn) {
+    public void setISBN(String isbn) {
         this.isbn = isbn;
     }
 
