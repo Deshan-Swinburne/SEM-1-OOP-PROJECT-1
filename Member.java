@@ -1,30 +1,26 @@
-import java.util.ArrayList;
-
 /**
  * Member class is a representation of a member entity which
- * contains attributes for the member's id, name and borrowed book list
- * 
+ * contains attributes for the member's id, name
+ *
  * @author - Deshan Charuka Chandrasekara
  * @version - openjdk 22.0
  */
-
 public class Member {
+    // instance variables
     private String id;
     private String name;
-    private ArrayList<Book> bookList;
 
 
     /**
-     * Constructor for objects of class Member
+     * Constructor for objects of the Member class
      *
-     * @param   id Member's ID Number(Unique)
-     * @param   name Member's name
+     * @param id   Member's ID Number(Unique)
+     * @param name Member's name
      */
     public Member(String id, String name) {
+        // initialise instance variables
         this.id = id;
         this.name = name;
-        bookList = new ArrayList<Book>();
-
     }
 
     /**
@@ -38,7 +34,7 @@ public class Member {
 
     /**
      * Set name of a member
-     * 
+     *
      * @param name member's name
      */
     public void setTitle(String name) {
@@ -46,17 +42,8 @@ public class Member {
     }
 
     /**
-     * Add a book to a member
-     * 
-     * @param book member's borrowed book
-     */
-    public void addBook(Book book) {
-        bookList.add(book);
-    }
-
-    /**
      * Get id of a member
-     * 
+     *
      * @return member's id
      */
     public String getID() {
@@ -65,26 +52,16 @@ public class Member {
 
     /**
      * Get name of a member
-     * 
+     *
      * @return member's name
      */
     public String geName() {
         return name;
     }
 
-
-    /**
-     * Get borrowed book list of a member
-     * 
-     * @return Borrowed Book list
-     */
-    public ArrayList<Book> getBookList() {
-        return bookList;
-    }    
-
     /**
      * Returns a string representation of the Member object.
-     * 
+     *
      * @return A string containing the member's ID and Name.
      */
     @Override
