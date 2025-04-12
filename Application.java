@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Application class is a representation of a serves as the Console (Text-Based) Interface
+ * Application class is a representation of a serves as the Console (Text-Based) Interface.
+ * Also handles the User's input out interactions.
  *
  * @author - Deshan Charuka Chandrasekara
  * @version - openjdk 22.0
@@ -25,6 +26,7 @@ public class Application {
             System.out.println("6. Return Book");
             System.out.println("7. Find Book");
             System.out.println("8. Exit");
+            System.out.print("Enter your choice: ");
 
             userSelectedOption = inputReader.nextInt();
 
@@ -36,6 +38,7 @@ public class Application {
                 case 2:
                     break;
                 case 3:
+                    initiateShowAllBookProcess();
                     break;
                 case 4:
                     break;
@@ -44,6 +47,7 @@ public class Application {
                 case 6:
                     break;
                 case 7:
+                    initiateFindBookProcess();
                     break;
                 case 8:
                     System.out.println("Program end!");
@@ -55,13 +59,16 @@ public class Application {
         } while (userSelectedOption != 8);
     }
 
+    /**
+     * Start the process of adding a book to the library system.
+     */
     public static void initiateAddBookProcess() {
         inputReader.nextLine();
-        System.out.print("Enter ISBN:");
+        System.out.print("Enter ISBN: ");
         String isbn = inputReader.nextLine();
-        System.out.print("Enter Title:");
+        System.out.print("Enter Title: ");
         String title = inputReader.nextLine();
-        System.out.print("Enter Author:");
+        System.out.print("Enter Author: ");
         String author = inputReader.nextLine();
 
         try {
@@ -72,4 +79,26 @@ public class Application {
         }
     }
 
+    /**
+     * Start the process of finding a book from the library system,according to the given ISBN
+     */
+    public static void initiateFindBookProcess() {
+        inputReader.nextLine();
+        System.out.print("Enter ISBN of the Book: ");
+        String isbn = inputReader.nextLine();
+        Book book = library.findBookByISBN(isbn);
+        if (book != null) {
+            System.out.println(book.toString() + " \n");
+        } else {
+            System.out.println("Error: Can't find a book for given ISBN!!");
+        }
+    }
+
+    /**
+     * Start the process of show all books of the library system
+     */
+    public static void initiateShowAllBookProcess() {
+        String output = library.showAllBooks();
+        System.out.println(output);
+    }
 }

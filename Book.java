@@ -108,7 +108,7 @@ public class Book {
      */
     @Override
     public String toString() {
-        return "ISBN:" + isbn + ", Title:" + title + ", Author:" + author + ", Availability:" +
+        return "ISBN: " + isbn + ", Title: " + title + ", Author: " + author + ", Availability: " +
                 (isAvailable ? "Available" : "Borrowed");
     }
 
