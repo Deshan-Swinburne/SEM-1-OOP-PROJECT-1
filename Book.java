@@ -59,7 +59,7 @@ public class Book {
     /**
      * Set status of a book
      *
-     * @param isAvailable book's satuts
+     * @param isAvailable book's status
      */
     public void setIsAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;

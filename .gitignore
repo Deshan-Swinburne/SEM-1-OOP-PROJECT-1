@@ -28,3 +28,4 @@ README.TXT
 *.iml
 out/
 .DS_Store
+qodana.yaml

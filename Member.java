@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Member class is a representation of a member entity which
  * contains attributes for the member's id, name
@@ -9,6 +11,7 @@ public class Member {
     // instance variables
     private String id;
     private String name;
+    private ArrayList<String> borrowedBooksISBNList;
 
 
     /**
@@ -21,6 +24,7 @@ public class Member {
         // initialise instance variables
         this.id = id;
         this.name = name;
+        borrowedBooksISBNList = new ArrayList<String>();
     }
 
     /**

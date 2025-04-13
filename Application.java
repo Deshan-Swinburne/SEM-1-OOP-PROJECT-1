@@ -41,6 +41,7 @@ public class Application {
                     initiateShowAllBookProcess();
                     break;
                 case 4:
+                    initiateRegisterMemberProcess();
                     break;
                 case 5:
                     break;
@@ -54,7 +55,7 @@ public class Application {
                     break;
                 default:
                     System.out.println("Wrong option selected.");
-                    System.out.println("Please select a correct option!!");
+                    System.out.println("Please select a correct option!! \n");
             }
         } while (userSelectedOption != 8);
     }
@@ -75,7 +76,7 @@ public class Application {
             library.addBook(isbn, title, author);
             System.out.println("Book added successfully!! \n");
         } catch (Exception ex) {
-            System.out.println("Error: " + ex.getMessage());
+            System.out.println("Error: " + ex.getMessage() + " \n");
         }
     }
 
@@ -90,7 +91,7 @@ public class Application {
         if (book != null) {
             System.out.println(book.toString() + " \n");
         } else {
-            System.out.println("Error: Can't find a book for given ISBN!!");
+            System.out.println("Error: Can't find a book for given ISBN!! \n");
         }
     }
 
@@ -100,5 +101,22 @@ public class Application {
     public static void initiateShowAllBookProcess() {
         String output = library.showAllBooks();
         System.out.println(output);
+    }
+
+    /**
+     * Start the process of show all books of the library system
+     */
+    public static void initiateRegisterMemberProcess() {
+        inputReader.nextLine();
+        System.out.print("Enter Member ID: ");
+        String id = inputReader.nextLine();
+        System.out.print("Enter Name: ");
+        String name = inputReader.nextLine();
+        try {
+            library.registerUser(id, name);
+            System.out.println("Member registered successfully. \n");
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage() + " \n");
+        }
     }
 }
